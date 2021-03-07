@@ -1,9 +1,14 @@
+// Class to generate input data and labels
 class Points{
   float x,y;
-  PVector [] points = new PVector[50000];
-  float [] label = new float[50000];
+  //Size of the training data
+  float inputSize = 50000;
+  
+  PVector [] points = new PVector[inputSize];
+  float [] label = new float[inputSize];
   
   Points(){
+  //generate random input data
     for(int i = 0 ; i < points.length;i++){
       this.points[i] = new PVector(random(0,1),random(0,1));
     }
