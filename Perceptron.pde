@@ -27,7 +27,7 @@ class Perceptron{
   }
   
   private void updateWeights(float label,float predictedValue,float x1,float x2){
-    
+    // Update the weights using the backpropagation algorithm
     float deltaW1 = -2 * x1 * predictedValue * (label - predictedValue) * (1 - predictedValue);
     
     float deltaW2 = -2 * x2 * predictedValue * (label - predictedValue) * (1 - predictedValue);
@@ -38,12 +38,12 @@ class Perceptron{
     w2 = w2 - deltaW2;
   }
   
-  
+  // return final trained weights
   public float[] getFinalWeights(){
     float[] weights = {w1,w2};
     return weights;
   }
-  
+  // Make predictions
   public float predict(float weight1,float weight2,float x1,float x2){
     float weightedSum = (x1 * weight1) + (x2 * weight2);
     float predictedValue = sigmoid(weightedSum);
