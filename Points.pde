@@ -1,6 +1,7 @@
 // Class to generate input data and labels
 class Points{
   float x,y;
+  float intercept;
   //Size of the training data
   float inputSize = 50000;
   
@@ -19,7 +20,7 @@ class Points{
       
     for(int i = 0 ; i < points.length;i++){
       
-      float yValue = new inputDataModel(points[i].x).getValue();
+      float yValue = new inputDataModel(points[i].x,intercept).getValue();
       
        if ( points[i].y > yValue){       
         
